@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Ride Me</string>
+
+    <string name="network_error">No network connection!</string>
+    <string name="connected">Connected, please swipe to refresh list.</string>
+
+    <string name="a_selector_taxi_fleet_title_tv_text">Taxi fleet</string>
+    <string name="a_selector_map_title_tv_text">Taxi fleet on the map</string>
+
+    <string name="l_footer_type_selector_tv_fleet_text">Taxi fleet</string>
+    <string name="l_footer_type_selector_tv_map_text">On the map</string>
+
+    <string name="sotw_north">North</string>
+    <string name="sotw_east">East</string>
+    <string name="sotw_south">South</string>
+    <string name="sotw_west">West</string>
+    <string name="sotw_northeast">North East</string>
+    <string name="sotw_northwest">North West</string>
+    <string name="sotw_southeast">South East</string>
+    <string name="sotw_southwest">South West</string>
+
+    <string name="distance_measure_km">km</string>
+
+    <string name="s_fetch_address_intent_not_available">Service not available.</string>
+    <string name="s_fetch_address_intent_invalid_lat_long">Invalid latitude or longitude used.</string>
+    <string name="s_fetch_address_intent_no_address_found">No address found.</string>
+    <string name="s_fetch_address_intent_address_found">Address found.</string>
+    <string name="s_fetch_address_intent_no_intent_or_receiver">No receiver received. There is nowhere to send the results.</string>
+    <string name="s_fetch_address_intent_no_location_data">No location data provided.</string>
+
+    <string name="i_taxi_tv_address_description_text">Address:</string>
+    <string name="i_taxi_tv_address_direction_description">Heading to:</string>
+    <string name="i_taxi_tv_address_distance_description">Distance to car:</string>
+
+</resources>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    tools:ignore="Overdraw">
+
+    <ImageButton
+        android:id="@+id/l_footer_type_selector_ibtn_fleet"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="15dp"
+        android:background="@null"
+        app:layout_constraintBottom_toTopOf="@id/l_footer_type_selector_tv_fleet"
+        app:layout_constraintEnd_toStartOf="@id/l_footer_type_selector_ibtn_map"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_taxi_inactive"
+        tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:id="@+id/l_footer_type_selector_ibtn_map"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:background="@null"
+        app:layout_constraintBottom_toTopOf="@id/l_footer_type_selector_tv_map"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/l_footer_type_selector_ibtn_fleet"
+        app:srcCompat="@drawable/ic_map_inactive"
+        tools:ignore="ContentDescription" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/l_footer_type_selector_tv_fleet"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/barlow_regular"
+        android:gravity="center"
+        android:paddingTop="4dp"
+        android:text="@string/l_footer_type_selector_tv_fleet_text"
+        android:textColor="@color/default_color_inactive"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/l_footer_type_selector_tv_map"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/l_footer_type_selector_tv_map"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/barlow_regular"
+        android:gravity="center"
+        android:paddingTop="4dp"
+        android:text="@string/l_footer_type_selector_tv_map_text"
+        android:textColor="@color/default_color_inactive"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/l_footer_type_selector_tv_fleet" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/black</color>
+    <color name="colorPrimaryDark">@color/black</color>
+    <color name="colorAccent">@color/orange</color>
+
+    <color name="orange">#fdb637</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="default_color_inactive">#A9A9A9</color>
+
+    <color name="color_error">#E63767</color>
+    <color name="color_succeed">#00574B</color>
+</resources>

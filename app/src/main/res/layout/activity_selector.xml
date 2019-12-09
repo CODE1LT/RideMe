@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.mytaxi.rideme.features.vehicles.selector.SelectorViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/a_selector_cl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/a_selector_tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/a_selector_taxi_fleet_title_tv_text"
+            android:textColor="@color/black"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:fontFamily="@font/barlow_medium"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:elevation="1dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/a_selector_fl_container"/>
+
+        <FrameLayout
+            android:id="@+id/a_selector_fl_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/a_selector_tv_title"
+            app:layout_constraintBottom_toTopOf="@id/a_selector_cl_bottom"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/a_selector_cl_bottom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:elevation="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.mytaxi.rideme.customviews.footerselector.FooterSelector
+                android:id="@+id/a_selector_footer_item_type_selector"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusableInTouchMode="true"
+                app:footerItemType="@={viewmodel.viewLiveData.selectorFooterItemType}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:onFooterItemTypeSelected="@{()-> viewmodel.onSelectorFooterItemTypeSelected()}" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.mytaxi.rideme.customviews.generalmessage.GeneralMessageLayout
+            android:id="@+id/a_selector_gml_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="1dp"
+            app:generalMessage="@={viewmodel.viewLiveData.generalMessage}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/a_selector_cl"
+            tools:visibility="visible" />
+
+        <com.mytaxi.rideme.customviews.DefaultLoader
+            android:id="@+id/a_selector_dl_loader"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="11dp"
+            app:visible="@{viewmodel.viewLiveData.loading}"
+            tools:visibility="gone" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

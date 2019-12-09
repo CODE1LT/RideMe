@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/i_taxi_cl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_solid_border"
+        android:minHeight="110dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/i_taxi_cl_top_block"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/i_taxi_vertical_guideline_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="18dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/i_taxi_vertical_guideline_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="5dp" />
+
+            <ImageView
+                android:id="@+id/i_taxi_iv_car_icon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_taxi"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/i_taxi_vertical_guideline_start"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/i_taxi_tv_address_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="@font/barlow_bold"
+                android:includeFontPadding="false"
+                android:text="@string/i_taxi_tv_address_description_text"
+                android:textColor="@color/colorPrimary"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toTopOf="@id/i_taxi_tv_direction_description"
+                app:layout_constraintEnd_toStartOf="@id/i_taxi_tv_address_text"
+                app:layout_constraintTop_toTopOf="@id/i_taxi_cl_top_block" />
+
+            <TextView
+                android:id="@+id/i_taxi_tv_address_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/barlow_regular"
+                android:includeFontPadding="false"
+                android:textColor="@color/colorPrimary"
+                android:textSize="10sp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:gravity="fill_horizontal"
+                app:layout_constraintEnd_toStartOf="@id/i_taxi_vertical_guideline_end"
+                app:layout_constraintVertical_weight="0.5"
+                app:layout_constraintTop_toTopOf="@id/i_taxi_tv_address_description"
+                app:layout_constraintBottom_toBottomOf="@id/i_taxi_tv_address_description"
+                app:layout_constraintWidth_percent="0.35"
+                tools:text="Smalines g. 11-14, Vilnius, Lithuania, LT-06226" />
+
+            <TextView
+                android:id="@+id/i_taxi_tv_direction_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="@font/barlow_bold"
+                android:includeFontPadding="false"
+                android:text="@string/i_taxi_tv_address_direction_description"
+                android:textColor="@color/colorPrimary"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toTopOf="@id/i_taxi_tv_distance_description"
+                app:layout_constraintEnd_toStartOf="@+id/i_taxi_tv_address_text"
+                app:layout_constraintTop_toBottomOf="@id/i_taxi_tv_address_text" />
+
+            <TextView
+                android:id="@+id/i_taxi_tv_direction_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/barlow_regular"
+                android:includeFontPadding="false"
+                android:textColor="@color/colorPrimary"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="@id/i_taxi_tv_direction_description"
+                app:layout_constraintEnd_toStartOf="@id/i_taxi_vertical_guideline_end"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintTop_toTopOf="@id/i_taxi_tv_direction_description"
+                app:layout_constraintWidth_percent="0.35"
+                tools:text="235' North East" />
+
+            <TextView
+                android:id="@+id/i_taxi_tv_distance_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="@font/barlow_bold"
+                android:includeFontPadding="false"
+                android:text="@string/i_taxi_tv_address_distance_description"
+                android:textColor="@color/colorPrimary"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@id/i_taxi_cl_top_block"
+                app:layout_constraintEnd_toStartOf="@id/i_taxi_tv_address_text"
+                app:layout_constraintTop_toBottomOf="@id/i_taxi_tv_direction_description" />
+
+            <TextView
+                android:id="@+id/i_taxi_tv_distance_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/barlow_regular"
+                android:includeFontPadding="false"
+                android:textColor="@color/colorPrimary"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="@id/i_taxi_tv_distance_description"
+                app:layout_constraintEnd_toStartOf="@id/i_taxi_vertical_guideline_end"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintTop_toTopOf="@id/i_taxi_tv_distance_description"
+                app:layout_constraintWidth_percent="0.35"
+                tools:text="135 km" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/default_color_inactive"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/l_transfer_template_cl_bottom_block"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_taxi_cl_top_block">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/i_taxi_vertical_guideline_bottom_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="18dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/i_taxi_vertical_guideline_bottom_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="18dp" />
+
+            <ImageView
+                android:id="@+id/i_taxi_iv_lat_icon"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/ic_latitude"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/i_taxi_vertical_guideline_bottom_start"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/i_taxi_tv_latitude_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/barlow_regular"
+                android:includeFontPadding="false"
+                android:textColor="@color/colorPrimary"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="@id/i_taxi_iv_lat_icon"
+                app:layout_constraintStart_toEndOf="@id/i_taxi_iv_lat_icon"
+                app:layout_constraintTop_toTopOf="@id/i_taxi_iv_lat_icon"
+                tools:text="53.694865" />
+
+            <ImageView
+                android:id="@+id/i_taxi_iv_lng_icon"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/ic_longitude"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/i_taxi_vertical_guideline_bottom_end"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/i_taxi_tv_longitude_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="@font/barlow_regular"
+                android:includeFontPadding="false"
+                android:textColor="@color/colorPrimary"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="@id/i_taxi_iv_lng_icon"
+                app:layout_constraintEnd_toStartOf="@id/i_taxi_iv_lng_icon"
+                app:layout_constraintTop_toTopOf="@id/i_taxi_iv_lng_icon"
+                tools:text="10.099891" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="l_general_message_tv_message_margin">20dp</dimen>
+    <dimen name="l_general_message_tv_message_text_size">14sp</dimen>
+    <dimen name="l_general_message_iv_close_margin">20dp</dimen>
+
+    <dimen name="f_list_rv_default_padding">15dp</dimen>
+
+</resources>

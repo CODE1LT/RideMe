@@ -1,0 +1,46 @@
+package com.mytaxi.rideme.base
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
+import dagger.android.support.DaggerAppCompatDialogFragment
+import com.mytaxi.rideme.logger.Logger
+import javax.inject.Inject
+
+abstract class BaseDialogFragment : DaggerAppCompatDialogFragment() {
+
+    @Inject
+    lateinit var logger: Logger
+
+    lateinit var viewDataBinding: ViewDataBinding
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        if (view != null) {
+            return view
+        }
+
+        return if (dataBindingEnabled()) {
+            viewDataBinding =
+                DataBindingUtil.inflate(inflater, getLayoutId(), container, false)
+            viewDataBinding.lifecycleOwner = this
+            viewDataBinding.executePendingBindings()
+            viewDataBinding.root
+        } else {
+            inflater.inflate(getLayoutId(), container, false)
+        }
+    }
+
+    abstract fun getLayoutId(): Int
+
+    abstract fun dataBindingEnabled(): Boolean
+
+    @Suppress("UNUSED")
+    abstract fun getFragmentTag(): String
+}
